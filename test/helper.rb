@@ -26,7 +26,7 @@ end
 SimpleCov.add_filter 'vendor'
 
 SimpleCov.start do
-  formatter SimpleCov::Formatter::MultiFormatter[
+  formatter SimpleCov::Formatter::MultiFormatter.new [
     SimpleCov::Formatter::HTMLFormatter,
     CodeClimate::TestReporter::Formatter
   ]
@@ -79,4 +79,3 @@ end
 MinitestVcr::Spec.configure!
 
 require 'fluent/plugin/out_kubernetes'
-
