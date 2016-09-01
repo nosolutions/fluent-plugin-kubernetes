@@ -36,7 +36,7 @@ class Fluent::KubernetesOutput < Fluent::Output
 
   def emit(tag, es, chain)
     es.each do |time,record|
-      Fluent::Engine.emit('kubernetes',
+      router.emit('kubernetes',
                           time,
                           enrich_record(tag, record))
     end
